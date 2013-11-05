@@ -34,8 +34,10 @@ public class Algorithm {
 		});
 
 		
+		//the 2 start points
 		convexEnvelope.add(points.get(0));
 		convexEnvelope.add(points.get(1));
+		
 		
 		
 	
