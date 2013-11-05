@@ -8,8 +8,7 @@ import java.util.List;
 
 public class Algorithm {
 
-	
-	
+		
 	public List<Point> MonotoneChain(List<Point> points) {
 
 		List<Point> convexEnvelope = new ArrayList<Point>();
@@ -44,5 +43,6 @@ public class Algorithm {
 		return points;
 
 	}
+		
 	
 }
