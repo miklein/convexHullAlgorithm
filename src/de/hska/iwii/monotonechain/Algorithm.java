@@ -13,7 +13,7 @@ public class Algorithm {
 		List<Point> convexEnvelopeLower = new ArrayList<Point>();
 		
 		Collections.sort(points);
-
+ 
 		if (points.size() <= 2) return points;
 		
 
