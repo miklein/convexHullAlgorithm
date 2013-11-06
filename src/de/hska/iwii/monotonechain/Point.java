@@ -1,6 +1,7 @@
 package de.hska.iwii.monotonechain;
 
-public class Point {
+
+public class Point implements Comparable<Point> {
 	
 	private int x;
 	private int y;
@@ -39,11 +40,10 @@ public class Point {
 		double v2x = this.getX() - start.getX();
 		double v2y = this.getY() - start.getY();
 		
-		double gv1 = v1y / v1x;
-		double gv2 = v2y / v2x;
-				
-		if (gv1 < gv2) return 1;	// point is above (left) the line
-		if (gv1 > gv2) return -1;	// point is below (right) the line
+		// crossproduct
+		double cp = (v1x * v2y) - (v1y * v2x);
+		if (cp > 0) return 1;	// point is above (left) the line
+		if (cp < 0) return -1;	// point is below (right) the line
 		return 0;					// point is on the line		
 		
 		/**
@@ -67,6 +67,17 @@ public class Point {
 	
 	
 	public String toString() {
-        return getClass().getName() + "[x=" + x + ",y=" + y + "]";
+       return "["+x+","+y+"]";
+		// return getClass().getName() + "[x=" + x + ",y=" + y + "]";
     }
+
+
+	@Override
+	public int compareTo(Point point) {
+		if (this.getX() < point.getX()) return -1;
+		if (this.getX() > point.getX()) return 1;
+		if (this.getY() < point.getY()) return -1;
+		if (this.getY() > point.getY()) return 1;
+		return 0;
+	}
 }
