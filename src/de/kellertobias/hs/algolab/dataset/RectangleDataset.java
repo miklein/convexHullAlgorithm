@@ -6,6 +6,11 @@ import java.util.Random;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
+/**
+ * Testdataset in which all Points are inside of a rectangle and also on its edges
+ * @author Tobias Keller
+ *
+ */
 public class RectangleDataset implements Dataset {
 
 	private List<Point> points = new ArrayList<Point>();
