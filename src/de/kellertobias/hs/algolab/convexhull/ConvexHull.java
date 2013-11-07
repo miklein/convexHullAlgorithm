@@ -16,7 +16,7 @@ public class ConvexHull {
 	//	Benchmark benchmark = new Benchmark();
 	//	benchmark.runtimeBenchmark();
 		
-		
+		 
 		Algorithm algo = new MonotoneChainAlgorithm();
 			
 		Dataset dataset = new RectangleDataset(500);	
