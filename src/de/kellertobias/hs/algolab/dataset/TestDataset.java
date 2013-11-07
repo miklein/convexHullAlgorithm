@@ -23,5 +23,16 @@ public class TestDataset implements Dataset {
 		
 		return pointList;
 	}
+	
 
+	public String toString() {
+		return "test";
+	}
+
+
+	@Override
+	public void regeneratePoints(int amount) {
+		// TODO Auto-generated method stub
+		
+	}
 }

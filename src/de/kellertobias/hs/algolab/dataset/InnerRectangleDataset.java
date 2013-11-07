@@ -11,6 +11,24 @@ public class InnerRectangleDataset implements Dataset {
 	private List<Point> points = new ArrayList<Point>();
 	
 	public InnerRectangleDataset(int amount) {
+		this.regeneratePoints(amount);
+	}
+	
+	
+	public String toString() {
+		return "rectangle-inner";
+	}
+	
+	@Override
+	public List<Point> getPoints() {
+		return this.points;
+	}
+
+
+	@Override
+	public void regeneratePoints(int amount) {
+		this.points.clear();
+		
 		Point topLeft = new Point(0,10);
 		Point bottomRight = new Point(10,0);
 		
@@ -35,13 +53,6 @@ public class InnerRectangleDataset implements Dataset {
 		this.points.add(bottomRight);
 		this.points.add(new Point(bottomRight.getX(), topLeft.getY()));
 		this.points.add(new Point(topLeft.getX(), bottomRight.getY()));
-		
-	}
-	
-	
-	@Override
-	public List<Point> getPoints() {
-		return this.points;
 	}
 
 }

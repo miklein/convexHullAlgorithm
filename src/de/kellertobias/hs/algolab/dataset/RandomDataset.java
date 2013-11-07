@@ -12,16 +12,25 @@ public class RandomDataset implements Dataset {
 	
 	
 	public RandomDataset(int amount) {
-		Random random = new Random(System.nanoTime());
-		for (int i=0; i < amount; i++) {
-			this.points.add(new Point(random.nextDouble(), random.nextDouble()));
-		}
+		this.regeneratePoints(amount);
 	}
 	
+	public String toString() {
+		return "random";
+	}
 	
 	@Override
 	public List<Point> getPoints() {
 		return this.points;
+	}
+
+	@Override
+	public void regeneratePoints(int amount) {
+		this.points.clear();
+		Random random = new Random(System.nanoTime());
+		for (int i=0; i < amount; i++) {
+			this.points.add(new Point(random.nextDouble(), random.nextDouble()));
+		}
 	}
 
 }
