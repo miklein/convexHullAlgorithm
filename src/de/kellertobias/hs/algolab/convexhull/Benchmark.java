@@ -7,24 +7,22 @@ import de.kellertobias.hs.algolab.dataset.RectangleDataset;
 
 public class Benchmark {
 	
-	public void runtimeBenchmark() {
+	
+	public void runtimeBenchmark(Algorithm algo, Dataset dataset) {
 		
-		Algorithm algo = new MonotoneChainAlgorithm();
 		Timer timer = new Timer();
-		Export output = new Export("D:\\benchmark.csv");
+		Export output = new Export("D:\\"+dataset.toString()+".benchmark.csv");
+		
+		System.out.println("running benchmark for "+dataset.toString());
 		
 		int n = 500;
 		for (int i=0; i < 14; i++) {
-			System.out.println("i="+i+" n="+n);
-			
-			Dataset dataset = new RectangleDataset(n);
-			
-			
+			dataset.regeneratePoints(n);
 			timer.start();
 			algo.calculate(dataset.getPoints());
 			timer.stop();
 			output.addBenchmark(n, timer.getRuntime());
-			System.out.println("runtime: "+(timer.getRuntime())+"ns");
+			System.out.println("n=: "+n+" time="+(timer.getRuntime())+"ns");
 			n*= 2;
 		}
 		output.store();

@@ -10,7 +10,23 @@ public class CircleDataset implements Dataset {
 	private List<Point> points = new ArrayList<Point>();
 	
 	public CircleDataset(int amount) {
-		
+		this.regeneratePoints(amount);
+	}
+	
+	
+	public String toString() {
+		return "circle";
+	}
+	
+	@Override
+	public List<Point> getPoints() {
+		return this.points;
+	}
+
+
+	@Override
+	public void regeneratePoints(int amount) {
+		this.points.clear();
 		double radius = 10;
 		double step = (Math.PI * 2) / amount;
 		
@@ -19,14 +35,6 @@ public class CircleDataset implements Dataset {
 			double y = Math.sin(i*step) * radius;
 			this.points.add(new Point(x,y));
 		}
-		
-	}
-	
-	
-	
-	@Override
-	public List<Point> getPoints() {
-		return this.points;
 	}
 
 }

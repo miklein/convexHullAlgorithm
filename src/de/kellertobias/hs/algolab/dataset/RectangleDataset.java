@@ -11,6 +11,21 @@ public class RectangleDataset implements Dataset {
 	private List<Point> points = new ArrayList<Point>();
 	
 	public RectangleDataset(int amount) {
+		this.regeneratePoints(amount);
+	}
+	
+	public String toString() {
+		return "rectangle";
+	}
+	
+	@Override
+	public List<Point> getPoints() {
+		return this.points;
+	}
+
+	@Override
+	public void regeneratePoints(int amount) {
+		this.points.clear();
 		Point topLeft = new Point(0,(int)Math.sqrt(amount)*2);
 		Point bottomRight = new Point((int)Math.sqrt(amount)*2,0);
 		
@@ -31,12 +46,6 @@ public class RectangleDataset implements Dataset {
 		this.points.add(bottomRight);
 		this.points.add(new Point(bottomRight.getX(), topLeft.getY()));
 		this.points.add(new Point(topLeft.getX(), bottomRight.getY()));
-	}
-	
-	
-	@Override
-	public List<Point> getPoints() {
-		return this.points;
 	}
 
 }
