@@ -1,0 +1,42 @@
+package de.kellertobias.hs.algolab.dataset;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import de.kellertobias.hs.algolab.convexhull.Point;
+
+public class RectangleDataset implements Dataset {
+
+	private List<Point> points = new ArrayList<Point>();
+	
+	public RectangleDataset(int amount) {
+		Point topLeft = new Point(0,(int)Math.sqrt(amount)*2);
+		Point bottomRight = new Point((int)Math.sqrt(amount)*2,0);
+		
+		Random random = new Random(System.nanoTime());
+		
+		for (int i=0; i < amount; i++) {
+			int x = (int)(Math.random() * ((bottomRight.getX()+1 - topLeft.getX())) + topLeft.getX());
+			int y = (int) (Math.random() * ((topLeft.getY()+1 - bottomRight.getY())) + bottomRight.getY());
+						
+			if (x > bottomRight.getX()) x = (int)bottomRight.getX();
+			if (y > topLeft.getY()) y = (int)topLeft.getY();
+			
+			this.points.add(new Point((double)x,(double)y));
+		}
+		
+		// add the corner-points
+		this.points.add(topLeft);
+		this.points.add(bottomRight);
+		this.points.add(new Point(bottomRight.getX(), topLeft.getY()));
+		this.points.add(new Point(topLeft.getX(), bottomRight.getY()));
+	}
+	
+	
+	@Override
+	public List<Point> getPoints() {
+		return this.points;
+	}
+
+}
