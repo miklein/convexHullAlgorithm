@@ -1,10 +1,15 @@
 package de.hska.iwii.monotonechain;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonotoneChain {
 
+	
+	
+	
+	
 	public static void main(String[] args) {
 		
 		List<Point> pointList = new ArrayList<>();
@@ -17,6 +22,13 @@ public class MonotoneChain {
 		pointList.add(new Point(7,3));
 		pointList.add(new Point(6,8));
 		pointList.add(new Point(7,5));
+		
+		
+		
+
+		
+		
+		
 
 //		int tmp = pointList.get(2).isAboveLine(pointList.get(0), pointList.get(1));
 //		if (tmp == 0) {
