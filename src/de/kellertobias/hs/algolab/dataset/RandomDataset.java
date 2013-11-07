@@ -6,6 +6,11 @@ import java.util.Random;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
+/**
+ * Testdataset that calculates random points
+ * @author Tobias Keller
+ *
+ */
 public class RandomDataset implements Dataset {
 
 	private List<Point> points = new ArrayList<Point>();

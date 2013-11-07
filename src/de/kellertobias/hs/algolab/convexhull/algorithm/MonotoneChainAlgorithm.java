@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import de.kellertobias.hs.algolab.convexhull.Timer;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
+/**
+ * Implementation of the "Monotone Cain Algorithm" 
+ * @author Tobias Keller
+ *
+ */
 public class MonotoneChainAlgorithm implements Algorithm {
 
 	@Override

@@ -4,9 +4,17 @@ import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
 import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
+import de.kellertobias.hs.algolab.dataset.CircleDataset;
 import de.kellertobias.hs.algolab.dataset.Dataset;
+import de.kellertobias.hs.algolab.dataset.InnerRectangleDataset;
 import de.kellertobias.hs.algolab.dataset.RandomDataset;
+import de.kellertobias.hs.algolab.dataset.RectangleDataset;
 
+/**
+ * 
+ * @author Tobias Keller
+ *
+ */
 public class ConvexHull {
 
 	public static void main(String[] args) {
@@ -15,18 +23,18 @@ public class ConvexHull {
 		Benchmark benchmark = new Benchmark();
 		Algorithm algo = new MonotoneChainAlgorithm();
 		
-		/*
-		benchmark.runtimeBenchmark(algo, new CircleDataset(1));
-		benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1));
-		benchmark.runtimeBenchmark(algo, new RectangleDataset(1));
-		benchmark.runtimeBenchmark(algo, new RandomDataset(1));
-		*/
+		
+		benchmark.runtimeBenchmark(algo, new CircleDataset(1), 6, 500);
+	//	benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1), 14, 500);
+	//	benchmark.runtimeBenchmark(algo, new RectangleDataset(1), 16, 500);
+	//	benchmark.runtimeBenchmark(algo, new RandomDataset(1), 15, 500);
+		
 		 
 		
-			
-		Dataset dataset = new RandomDataset(50);	
+		
+		Dataset dataset = new RandomDataset(4000);
 		List<Point> result = algo.calculate(dataset.getPoints());
-				
+	
 		Export plot = new Export("D:\\pplot.dat");
 		plot.addDataset(dataset);
 		plot.addHull(result);

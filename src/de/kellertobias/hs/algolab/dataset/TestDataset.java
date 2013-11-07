@@ -5,6 +5,11 @@ import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
+/**
+ * Just a Testdataset that was used while implementing the algorithms
+ * @author Tobias Keller
+ *
+ */
 public class TestDataset implements Dataset {
 
 	@Override
