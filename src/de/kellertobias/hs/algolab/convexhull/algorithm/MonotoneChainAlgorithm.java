@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import de.kellertobias.hs.algolab.convexhull.Timer;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
@@ -82,9 +81,10 @@ public class MonotoneChainAlgorithm implements Algorithm {
 		}
 		
 		// remove the first elements in the list and merge them
-		lowerHull.remove(0);
-		upperHull.remove(0);
+		lowerHull.remove(lowerHull.size()-1);
+		upperHull.remove(upperHull.size()-1);
 		upperHull.addAll(lowerHull);
+		
 		
 		return upperHull;
 	}

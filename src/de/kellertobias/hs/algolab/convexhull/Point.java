@@ -61,6 +61,8 @@ public class Point implements Comparable<Point> {
 	 */
 	public int isAboveLine(Point start, Point end) {
 		
+		System.out.println("Prüfe ob "+this+" über Linie ("+start+" -> "+end+")");
+		
 		// vector from start to end
 		double v1x = end.getX() - start.getX();
 		double v1y = end.getY() - start.getY();
@@ -75,6 +77,9 @@ public class Point implements Comparable<Point> {
 		if (cp < 0) return -1;	// point is below (right) the line
 		return 0;					// point is on the line		
 	}
+	
+	
+
 	
 	/**
 	 * returns the x and y-value as a string
