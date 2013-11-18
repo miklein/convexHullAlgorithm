@@ -35,45 +35,106 @@ public class ChanAlgorithm implements Algorithm {
 			}
 			
 			
-			System.out.println("Jetzt gehts los..");
-			System.out.println(subsets);
 			
-			// javis march
+			// Begin Javis march..
 			List<Point> output = new ArrayList<Point>();
 			output.add(farthesLeftPoint);
-			int hullIndex = 1;			//Begin with second hull point
-			// Roundlength depend of the choosen size of m
+			int skipHull = 0;
+			int hullIndex = 0;
+			
+			// durchlaufe m mal
 			for (int j=0; j < m; j++) {
 				
-				// calculate angle between last output point and the stepIndex-Point of the subset
+				// vorgänger
 				Point startpoint = output.get(output.size()-1);
+				Point newStartPoint = null;
+				int newStartPointHull = 0;
 				
-				Point newStartPoint = null;					
-						
-				for (int currentHull = 0; currentHull < convexHulls.size(); currentHull++) {
-					int safeHullIndex = hullIndex % convexHulls.get(currentHull).size();
-					System.out.println("currentHull="+currentHull + " hullIndex="+hullIndex+" safeHullIndex="+safeHullIndex);
-					System.out.println("hull:"+convexHulls.get(currentHull));
-					//If current point from convexHullPart is left from line startpoint -> 
-					if (newStartPoint == null || convexHulls.get(currentHull).get(safeHullIndex).isAboveLine(startpoint, newStartPoint) == 1) {
-						newStartPoint = convexHulls.get(currentHull).get(safeHullIndex);
+				
+				// durchlaufe alle teilhüllen
+				for (int subHull=0; subHull < convexHulls.size(); subHull++) {
+					if (subHull == skipHull) continue; // skip hull of vorgänger
+					
+					int safeHullIndex = hullIndex % convexHulls.get(subHull).size();
+					
+					
+					
+					if (newStartPoint == null || convexHulls.get(subHull).get(safeHullIndex).isAboveLine(startpoint, newStartPoint) == 1) {
+						newStartPoint = convexHulls.get(subHull).get(safeHullIndex);
+						newStartPointHull = subHull;
 						System.out.println("new startpoint="+newStartPoint);
 					}
 				}
 				
-				// Terminate if back at farthest left point -> startpoint of the hull
 				if (newStartPoint == farthesLeftPoint) {
 					System.out.println("FINALE Lösung Runde "+i+" => "+ output);
 					return output;
 				}
-
+				
 				if (newStartPoint != null) {
+					
+										
 					output.add(newStartPoint);
+					skipHull = newStartPointHull;
 				}
+				
+								
+				
 				hullIndex++;
+				
 			}
 			
-			System.out.println("Lösung Runde "+i+" => "+ output);
+			
+			
+			
+//			// javis march
+//			List<Point> output = new ArrayList<Point>();
+//			output.add(farthesLeftPoint);
+//			int hullIndex = 1;			//Begin with second hull point
+//			// Roundlength depend of the choosen size of m
+//		
+//			//int m = (int)Math.ceil(dataset.size() / (float)m);
+//			
+//			for (int j=0; j < m; j++) {
+//				
+//				System.out.println("========================================\n");
+//				System.out.println("m:"+ m);
+//				
+//				// calculate angle between last output point and the stepIndex-Point of the subset
+//				Point startpoint = output.get(output.size()-1);
+//				
+//				Point newStartPoint = null;					
+//						
+//				for (int currentHull = 0; currentHull < convexHulls.size(); currentHull++) {
+//					int safeHullIndex = hullIndex % convexHulls.get(currentHull).size();
+//					
+//					System.out.println("--------------------\nhull:"+convexHulls.get(currentHull));
+//					
+//					if (convexHulls.get(currentHull).size() == 1) {
+//						
+//					}
+//					
+//					
+//					//If current point from convexHullPart is left from line startpoint -> 
+//					if (newStartPoint == null || convexHulls.get(currentHull).get(safeHullIndex).isAboveLine(startpoint, newStartPoint) == 1) {
+//						newStartPoint = convexHulls.get(currentHull).get(safeHullIndex);
+//						System.out.println("new startpoint="+newStartPoint);
+//					}
+//				}
+//				
+//				// Terminate if back at farthest left point -> startpoint of the hull
+//				if (newStartPoint == farthesLeftPoint) {
+//					System.out.println("FINALE Lösung Runde "+i+" => "+ output);
+//					return output;
+//				}
+//
+//				if (newStartPoint != null) {
+//					output.add(newStartPoint);
+//				}
+//				hullIndex++;
+//			}
+//			
+//			System.out.println("Lösung Runde "+i+" => "+ output);
 			
 			i++;
 		} while(i < dataset.size());

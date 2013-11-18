@@ -26,8 +26,12 @@ public class ConvexHull {
 		Algorithm algo = new ChanAlgorithm();
 		
 		Dataset dataset = new TestDataset();
-		System.out.println(algo.calculate(dataset.getPoints()));
+		List<Point> result = algo.calculate(dataset.getPoints());
 		
+		Export plot = new Export("D:\\pplot.dat");
+		plot.addDataset(dataset);
+		plot.addHull(result);
+		plot.store();
 		
 		
 	//	benchmark.runtimeBenchmark(algo, new CircleDataset(1), 6, 500);
