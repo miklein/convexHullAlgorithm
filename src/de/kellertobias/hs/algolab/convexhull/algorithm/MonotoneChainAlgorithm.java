@@ -7,8 +7,8 @@ import java.util.List;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Implementation of the "Monotone Cain Algorithm" 
- * @author Tobias Keller
+ * Monotone Chain Algorithm
+ * @author Michael Klein
  *
  */
 public class MonotoneChainAlgorithm implements Algorithm {

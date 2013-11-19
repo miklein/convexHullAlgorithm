@@ -7,8 +7,8 @@ import java.util.Random;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Testdataset that calculates random points
- * @author Tobias Keller
+ * Dataset that calculates random points
+ * @author Michael Klein
  *
  */
 public class RandomDataset implements Dataset {

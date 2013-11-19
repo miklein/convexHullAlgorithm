@@ -7,8 +7,8 @@ import java.util.Random;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Testdataset in which all Points are inside of a rectangle but NOT on its edges
- * @author Tobias Keller
+ * Dataset in which all Points are inside of a rectangle but NOT on its edges
+ * @author Michael Klein
  *
  */
 public class InnerRectangleDataset implements Dataset {

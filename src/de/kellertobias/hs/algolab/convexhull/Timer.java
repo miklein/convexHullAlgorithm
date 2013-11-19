@@ -1,8 +1,8 @@
 package de.kellertobias.hs.algolab.convexhull;
 
 /**
- * Timer <- no definition needed
- * @author Tobias Keller
+ * Timer
+ * @author Michael Klein
  *
  */
 public class Timer {

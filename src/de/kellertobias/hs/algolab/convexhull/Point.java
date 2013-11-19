@@ -1,8 +1,8 @@
 package de.kellertobias.hs.algolab.convexhull;
 
 /**
- * Class for representation of a point in an 2D-System
- * @author Tobias Keller
+ * Point in an 2D-System
+ * @author Michael Klein
  *
  */
 public class Point implements Comparable<Point> {

@@ -6,8 +6,8 @@ import java.util.List;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Testdataset where all Points are defined on a circle
- * @author Tobias Keller
+ * Dataset where all Points are on a circle
+ * @author Michael Klein
  *
  */
 public class CircleDataset implements Dataset {

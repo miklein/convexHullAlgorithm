@@ -10,7 +10,7 @@ import de.kellertobias.hs.algolab.dataset.Dataset;
 /**
  * Export given information to the Filesystem.
  * 
- * @author Tobias Keller
+ * @author Michael Klein
  *
  */
 public class Export {

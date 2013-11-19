@@ -4,8 +4,8 @@ import java.util.List;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Interface that is implemented by all Datasets
- * @author Tobias Keller
+ * Interface for Datasets
+ * @author Michael Klein
  *
  */
 public interface Dataset {

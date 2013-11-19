@@ -6,7 +6,7 @@ import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
  * All Algorithms that implement an Convex-Hull Solution implement this class
- * @author Tobias Keller
+ * @author Michael Klein
  *
  */
 public interface Algorithm {
