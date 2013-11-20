@@ -16,7 +16,6 @@ public class CircleDatasetTest {
 		
 		Assert.assertEquals("circle", circleData.toString());
 		
-	
 	}
 
 }

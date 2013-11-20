@@ -21,13 +21,11 @@ public class TestDataset implements Dataset {
 		pointList.add(new Point(1,1));
 		pointList.add(new Point(2,6));
 		pointList.add(new Point(3,4));
-		pointList.add(new Point(9,4.3));
+		pointList.add(new Point(9,4));
+		pointList.add(new Point(7,5));
 		pointList.add(new Point(7,3));
 		pointList.add(new Point(6,8));
-		pointList.add(new Point(7,5));
-		pointList.add(new Point(9,1));
-		pointList.add(new Point(8,1.3));
-		pointList.add(new Point(7,1.5));
+		pointList.add(new Point(6,8));
 		
 		
 //		pointList.add(new Point(1,1));

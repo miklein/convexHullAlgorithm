@@ -53,11 +53,11 @@ public class InnerRectangleDataset implements Dataset {
 			this.points.add(new Point(x,y));
 		}
 		
-		// add the corner-points
-		this.points.add(topLeft);
-		this.points.add(bottomRight);
-		this.points.add(new Point(bottomRight.getX(), topLeft.getY()));
-		this.points.add(new Point(topLeft.getX(), bottomRight.getY()));
+		// do NOT add the corner-points
+//		this.points.add(topLeft);
+//		this.points.add(bottomRight);
+//		this.points.add(new Point(bottomRight.getX(), topLeft.getY()));
+//		this.points.add(new Point(topLeft.getX(), bottomRight.getY()));
 	}
 
 }

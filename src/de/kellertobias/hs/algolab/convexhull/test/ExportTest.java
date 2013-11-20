@@ -24,8 +24,6 @@ public class ExportTest {
 		Algorithm algo = new MonotoneChainAlgorithm();
 		this.dataset = new RandomDataset(400);
 		this.calculatedConvexHull = algo.calculate(dataset.getPoints());
-	
-		
 	}
 	
 	

@@ -38,11 +38,11 @@ public class MonotoneChainAlgorithmTest {
 	@Test
 	public void testAlgorithm() {
 		List<Point> convexHull = new ArrayList<Point>();
+		convexHull.add(new Point(1,1));
 		convexHull.add(new Point(2,6));
 		convexHull.add(new Point(6,8));
 		convexHull.add(new Point(9,4));
 		convexHull.add(new Point(7,3));
-		convexHull.add(new Point(1,1));
 		
 		int i = 0;
 		

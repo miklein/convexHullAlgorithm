@@ -6,6 +6,11 @@ import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
+/**
+ * Implementation of Chans algorithm
+ * @author Tobias Keller
+ *
+ */
 public class ChanAlgorithm implements Algorithm {
 
 	@Override

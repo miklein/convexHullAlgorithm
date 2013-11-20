@@ -17,15 +17,11 @@ public class BenchmarkTest {
 	public void testBenchmark() {
 		Benchmark benchmark = new Benchmark();
 		Algorithm algo = new MonotoneChainAlgorithm();
-		Dataset dataSet = new CircleDataset(12);
-		benchmark.runtimeBenchmark(algo, dataSet, 6, 500);
+		Dataset dataset = new CircleDataset(12);
+		benchmark.runtimeBenchmark(algo, dataset, 6, 500);
 		
-		File file = new File("D:\\"+dataSet.toString()+".benchmark.csv");
+		File file = new File("D:\\"+dataset.toString()+".benchmark.csv");
 		Assert.assertTrue(file.exists());
-		
-		
-		
-		
 		
 	}
 
