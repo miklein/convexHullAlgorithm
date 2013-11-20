@@ -7,7 +7,7 @@ import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
  * Just a Testdataset that was used while implementing the algorithms
- * @author Tobias Keller
+ * @author Michael Klein
  *
  */
 public class TestDataset implements Dataset {

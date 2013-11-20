@@ -16,6 +16,7 @@ public class MonotoneChainAlgorithmTest {
 	
 	
 	private List<Point> pointList;
+	private List<Point> circleList;
 	
 	
 	 @Before
@@ -31,8 +32,23 @@ public class MonotoneChainAlgorithmTest {
 		points.add(new Point(7,3));
 		points.add(new Point(6,8));
 		points.add(new Point(6,8));
-		
 		this.pointList = points;
+		
+		List<Point> circlePoints = new ArrayList<Point>();
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));
+		circlePoints.add(new Point(1,1));	
+		this.circleList = circlePoints;
+		
 	    }
 	
 	@Test
@@ -55,6 +71,13 @@ public class MonotoneChainAlgorithmTest {
 		//assertArrayEquals(convexHull, algorithm.calculate(pointList));
 //		assertThat(algorithm.calculate(pointList), 
 //			       IsIterableContainingInOrder.contains(convexHull.toArray()));
+		
+	}
+	
+	@Test
+	public void testAlgorithmOnCircle() {
+		
+		
 		
 	}
 

@@ -38,14 +38,14 @@ public class PointTest {
 
 	@Test
 	public void testPointAboveLine() {
-		Assert.assertEquals(1, pA.isAboveLine(p2, p3));
-		Assert.assertEquals(1, pB.isAboveLine(p1, p2));
+		Assert.assertEquals(1, pA.positionToLine(p2, p3));
+		Assert.assertEquals(1, pB.positionToLine(p1, p2));
 		
-		Assert.assertEquals(-1, pC.isAboveLine(p1, p2));
-		Assert.assertEquals(-1, pD.isAboveLine(p2, p3));
+		Assert.assertEquals(-1, pC.positionToLine(p1, p2));
+		Assert.assertEquals(-1, pD.positionToLine(p2, p3));
 		
-		Assert.assertEquals(0, pE.isAboveLine(p2, p3));
-		Assert.assertEquals(0, p2.isAboveLine(p1, p2));
+		Assert.assertEquals(0, pE.positionToLine(p2, p3));
+		Assert.assertEquals(0, p2.positionToLine(p1, p2));
 		
 	}
 

@@ -2,14 +2,13 @@ package de.kellertobias.hs.algolab.convexhull.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Monotone Chain Algorithm
+ * Monotone Chain Algorithm to calculate the convex hull from a point dataset 
  * @author Michael Klein
  *
  */
@@ -17,23 +16,22 @@ public class MonotoneChainAlgorithm implements Algorithm {
 
 	@Override
 	public List<Point> calculate(List<Point> dataset) {
-		
-		Iterator<Point> datasetIterator  = dataset.iterator();
-		LinkedList<Point> upperHull = new LinkedList<Point>();
+		ListIterator<Point> datasetIterator = dataset.listIterator();
+		List<Point> upperHull = new ArrayList<Point>();
 		List<Point> lowerHull = new ArrayList<Point>();
 		
-		// sort the points
 		Collections.sort(dataset);
 		
-		// no need to calculate something
-		if (dataset.size() <= 2) return dataset;
+		
+		if (dataset.size() <= 2){
+			// no calculation needed
+			return dataset;
+		}
 		
 		
 		// calculate upper hull
-	
 		
 		// initiate the list with the first two points
-	
 		upperHull.add(datasetIterator.next());
 		upperHull.add(datasetIterator.next());
 		
@@ -41,40 +39,39 @@ public class MonotoneChainAlgorithm implements Algorithm {
 		
 		// walk through all points except the first 2 (they are already in the list)
 		while(datasetIterator.hasNext()) {
-			Point point = datasetIterator.next();
+			Point currentPoint = datasetIterator.next();
 			
-			Point hm1 = upperHull.get(k-1);
-			Point hm2 = upperHull.get(k-2);
+			Point point1 = upperHull.get(k-1);
+			Point point2 = upperHull.get(k-2);
 			
-			// as long as the previous point (hm1) is above the vector from hm2 to the current point and k has at least 2 entries
-			while (hm1.isAboveLine(hm2, point) <= 0 && k >= 2) {
-				
-				// remove the last item in the list
+			// as long as the previous point (point1) is left the vector from point2 to the current point and k has at least 2 entries
+			while (point1.positionToLine(point2, currentPoint) <= 0 && k >= 2) {
 				upperHull.remove(k-1);
 				k--;
 				if (k >= 2) {
-					hm1 = upperHull.get(k-1);
-					hm2 = upperHull.get(k-2);
+					point1 = upperHull.get(k-1);
+					point2 = upperHull.get(k-2);
 				}
 			}
-			// add the current point to the list
-			upperHull.add(point);
+			upperHull.add(currentPoint);
 			k++;
 		}
 		
 		
-		// calculate lower hull
-		k=2;
-		lowerHull.add(dataset.get(dataset.size()-1));
-		lowerHull.add(dataset.get(dataset.size()-2));
 		
-		for (int pc=dataset.size()-3; pc >= 0; pc--) {
-			Point point = dataset.get(pc);
+		// calculate lower hull
+		
+		lowerHull.add(datasetIterator.previous());
+		lowerHull.add(datasetIterator.previous());
+		k=2;
+		
+		while(datasetIterator.hasPrevious()) {
+			Point point = datasetIterator.previous();
 			
 			Point hm1 = lowerHull.get(k-1);
 			Point hm2 = lowerHull.get(k-2);
 			
-			while (hm1.isAboveLine(hm2, point) <= 0 && k >= 2) {
+			while (hm1.positionToLine(hm2, point) <= 0 && k >= 2) {
 				lowerHull.remove(k-1);
 				k--;
 				if (k >= 2) {

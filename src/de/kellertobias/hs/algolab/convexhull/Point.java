@@ -53,15 +53,13 @@ public class Point implements Comparable<Point> {
 	}
 	
 	/**
-	 * check if this point is above the line between the points, defined by the params
-	 * returns 1 if the point is above the line, -1 if it is below and 0 if it is on the line
+	 * check if this point is above the line between the given points
 	 * @param start Startpoint of the line
 	 * @param end Endpoint of the line
-	 * @return
+	 * @return 1 if the point is left (above) the line, 
+	 * -1 if it is right (below) and 0 if it is on the line
 	 */
-	public int isAboveLine(Point start, Point end) {
-		
-		// System.out.println("Prüfe ob "+this+" über Linie ("+start+" -> "+end+")");
+	public int positionToLine(Point start, Point end) {
 		
 		// vector from start to end
 		double v1x = end.getX() - start.getX();
@@ -73,8 +71,8 @@ public class Point implements Comparable<Point> {
 		
 		// crossproduct
 		double cp = (v1x * v2y) - (v1y * v2x);
-		if (cp > 0) return 1;	// point is above (left) the line
-		if (cp < 0) return -1;	// point is below (right) the line
+		if (cp > 0) return 1;		// point is left (above) the line
+		if (cp < 0) return -1;		// point is right (below) the line
 		return 0;					// point is on the line		
 	}
 	
@@ -86,11 +84,13 @@ public class Point implements Comparable<Point> {
 	 */
 	public String toString() {
        return "["+x+","+y+"]";
-		// return getClass().getName() + "[x=" + x + ",y=" + y + "]";
     }
 
 
 	@Override
+	/**
+	 * Compares point first after x and if x is equal after y
+	 */
 	public int compareTo(Point point) {
 		if (this.getX() < point.getX()) return -1;
 		if (this.getX() > point.getX()) return 1;

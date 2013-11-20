@@ -14,14 +14,14 @@ public class Benchmark {
 	 * Runs a benchmark for a given algorithm based on the dataset
 	 * the tests will be performed <loop> times with a given <amount> of points
 	 * in each loop the amount of points will be doubled.
-	 * The results will be stored on the filesystem.
+	 * The results will written in a file
 	 *  
-	 * @param algo The algorithm, used for the benchmark
-	 * @param dataset The dataset, that will be generating the points
-	 * @param loops The times the benchmark will be runned
+	 * @param algorithm The algorithm, used for the benchmark
+	 * @param dataset The dataset, which is used for the benchmark
+	 * @param loops Repeating amount
 	 * @param amount The initial amount of Points that will be used
 	 */
-	public void runtimeBenchmark(Algorithm algo, Dataset dataset, int loops, int amount) {
+	public void runtimeBenchmark(Algorithm algorithm, Dataset dataset, int loops, int amount) {
 		
 		Timer timer = new Timer();
 		Export output = new Export("D:\\"+dataset.toString()+".benchmark.csv");
@@ -32,7 +32,7 @@ public class Benchmark {
 		for (int i=0; i < loops; i++) {
 			dataset.regeneratePoints(n);
 			timer.start();
-			algo.calculate(dataset.getPoints());
+			algorithm.calculate(dataset.getPoints());
 			timer.stop();
 			output.addBenchmark(n, timer.getRuntime());
 			

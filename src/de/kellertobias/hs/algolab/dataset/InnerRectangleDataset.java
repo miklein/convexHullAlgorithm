@@ -7,7 +7,7 @@ import java.util.Random;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * Dataset in which all Points are inside of a rectangle but NOT on its edges
+ * Dataset in which all points are inside of a rectangle but NOT on its edges
  * @author Michael Klein
  *
  */

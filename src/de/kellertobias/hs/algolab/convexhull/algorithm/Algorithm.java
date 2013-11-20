@@ -5,15 +5,15 @@ import java.util.List;
 import de.kellertobias.hs.algolab.convexhull.Point;
 
 /**
- * All Algorithms that implement an Convex-Hull Solution implement this class
+ * Interface for Algorithms for Convex-Hull calculation 
  * @author Michael Klein
  *
  */
 public interface Algorithm {
 	
 	/**
-	 * Calculates the convex-hull of all Points in the dataset
-	 * @param dataset List of all Points
+	 * Calculates the convex-hull of all Points from the dataset
+	 * @param dataset List points
 	 * @return Points of the convex-hull
 	 */
 	 public List<Point> calculate(List<Point> dataset);

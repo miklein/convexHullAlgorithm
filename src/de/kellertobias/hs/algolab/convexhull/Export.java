@@ -8,7 +8,7 @@ import java.util.List;
 import de.kellertobias.hs.algolab.dataset.Dataset;
 
 /**
- * Export given information to the Filesystem.
+ * Export given information to a file
  * 
  * @author Michael Klein
  *
@@ -20,7 +20,7 @@ public class Export {
 	
 	/**
 	 * 
-	 * @param filename In this File, the information will be stored
+	 * @param filename File, the information will be stored
 	 */
 	public Export(String filename) {
 		this.filename = filename;
@@ -37,8 +37,7 @@ public class Export {
 	}
 	
 	/**
-	 * add the complete dataset to the file
-	 * (formated in an proprietary format)
+	 * add the complete dataset in a formated way to the file
 	 * @param dataset
 	 */
 	public void addDataset(Dataset dataset) {
@@ -48,7 +47,6 @@ public class Export {
 	
 	/**
 	 * add the points of the convex-hull to the file
-	 * (formated in an proprietary format)
 	 * @param hull
 	 */
 	public void addHull(List<Point> hull) {
