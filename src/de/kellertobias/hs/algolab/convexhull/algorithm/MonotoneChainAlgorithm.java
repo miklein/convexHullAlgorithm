@@ -2,6 +2,8 @@ package de.kellertobias.hs.algolab.convexhull.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
@@ -16,7 +18,8 @@ public class MonotoneChainAlgorithm implements Algorithm {
 	@Override
 	public List<Point> calculate(List<Point> dataset) {
 		
-		List<Point> upperHull = new ArrayList<Point>();
+		Iterator<Point> datasetIterator  = dataset.iterator();
+		LinkedList<Point> upperHull = new LinkedList<Point>();
 		List<Point> lowerHull = new ArrayList<Point>();
 		
 		// sort the points
@@ -27,15 +30,18 @@ public class MonotoneChainAlgorithm implements Algorithm {
 		
 		
 		// calculate upper hull
-		int k=0;
+	
 		
 		// initiate the list with the first two points
-		upperHull.add(dataset.get(k++));
-		upperHull.add(dataset.get(k++));
+	
+		upperHull.add(datasetIterator.next());
+		upperHull.add(datasetIterator.next());
+		
+		int k=2;
 		
 		// walk through all points except the first 2 (they are already in the list)
-		for (int pc=2; pc < dataset.size(); pc++) {
-			Point point = dataset.get(pc);
+		while(datasetIterator.hasNext()) {
+			Point point = datasetIterator.next();
 			
 			Point hm1 = upperHull.get(k-1);
 			Point hm2 = upperHull.get(k-2);
