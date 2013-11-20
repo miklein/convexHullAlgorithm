@@ -6,6 +6,7 @@ import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
 import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
 import de.kellertobias.hs.algolab.dataset.Dataset;
 import de.kellertobias.hs.algolab.dataset.RandomDataset;
+import de.kellertobias.hs.algolab.dataset.RectangleDataset;
 import de.kellertobias.hs.algolab.dataset.TestDataset;
 
 /**
@@ -31,8 +32,8 @@ public class ConvexHull {
 		
 	//	benchmark.runtimeBenchmark(algo, new CircleDataset(1), 6, 500);
 	//	benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1), 14, 500);
-	//	benchmark.runtimeBenchmark(algo, new RectangleDataset(1), 16, 500);
-		benchmark.runtimeBenchmark(algo, new RandomDataset(1), 12, 500);
+		benchmark.runtimeBenchmark(algo, new RectangleDataset(1), 14, 500);
+	//	benchmark.runtimeBenchmark(algo, new RandomDataset(1), 12, 500);
 		
 		 
 //		running benchmark for random
