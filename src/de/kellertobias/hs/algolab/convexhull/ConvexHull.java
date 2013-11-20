@@ -23,10 +23,12 @@ public class ConvexHull {
 		
 		// run benchmark
 		//Benchmark benchmark = new Benchmark();
-		Algorithm algo = new ChanAlgorithm();
+		Algorithm algo = new MonotoneChainAlgorithm();
 		
 		Dataset dataset = new TestDataset();
 		List<Point> result = algo.calculate(dataset.getPoints());
+		
+		System.out.println(result);
 		
 		Export plot = new Export("D:\\pplot.dat");
 		plot.addDataset(dataset);

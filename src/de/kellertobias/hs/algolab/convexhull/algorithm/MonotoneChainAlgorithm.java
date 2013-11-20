@@ -2,7 +2,9 @@ package de.kellertobias.hs.algolab.convexhull.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
 
@@ -16,6 +18,7 @@ public class MonotoneChainAlgorithm implements Algorithm {
 	@Override
 	public List<Point> calculate(List<Point> dataset) {
 		
+		ListIterator<Point> datasetIterator = dataset.listIterator();
 		List<Point> upperHull = new ArrayList<Point>();
 		List<Point> lowerHull = new ArrayList<Point>();
 		
@@ -27,15 +30,15 @@ public class MonotoneChainAlgorithm implements Algorithm {
 		
 		
 		// calculate upper hull
-		int k=0;
+		int k=2;
 		
 		// initiate the list with the first two points
-		upperHull.add(dataset.get(k++));
-		upperHull.add(dataset.get(k++));
+		upperHull.add(datasetIterator.next());
+		upperHull.add(datasetIterator.next());
 		
 		// walk through all points except the first 2 (they are already in the list)
-		for (int pc=2; pc < dataset.size(); pc++) {
-			Point point = dataset.get(pc);
+		while(datasetIterator.hasNext()) {
+			Point point = datasetIterator.next();
 			
 			Point hm1 = upperHull.get(k-1);
 			Point hm2 = upperHull.get(k-2);
@@ -57,13 +60,14 @@ public class MonotoneChainAlgorithm implements Algorithm {
 		}
 		
 		
+		
 		// calculate lower hull
 		k=2;
-		lowerHull.add(dataset.get(dataset.size()-1));
-		lowerHull.add(dataset.get(dataset.size()-2));
+		lowerHull.add(datasetIterator.previous());
+		lowerHull.add(datasetIterator.previous());
 		
-		for (int pc=dataset.size()-3; pc >= 0; pc--) {
-			Point point = dataset.get(pc);
+		while(datasetIterator.hasPrevious()) {
+			Point point = datasetIterator.previous();
 			
 			Point hm1 = lowerHull.get(k-1);
 			Point hm2 = lowerHull.get(k-2);
