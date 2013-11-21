@@ -1,7 +1,7 @@
-package de.kellertobias.hs.algolab.convexhull;
+package de.hska.iwi.algolab.convexhull;
 
-import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
-import de.kellertobias.hs.algolab.dataset.Dataset;
+import de.hska.iwi.algolab.convexhull.algorithm.Algorithm;
+import de.hska.iwi.algolab.dataset.Dataset;
 
 /**
  * Measures the runtime of the Algorithm

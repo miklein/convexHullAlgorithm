@@ -1,8 +1,9 @@
-package de.kellertobias.hs.algolab.convexhull.algorithm;
+package de.hska.iwi.algolab.convexhull.algorithm;
 
 
 import java.util.List;
-import de.kellertobias.hs.algolab.convexhull.Point;
+
+import de.hska.iwi.algolab.convexhull.Point;
 
 /**
  * Interface for Algorithms for Convex-Hull calculation 

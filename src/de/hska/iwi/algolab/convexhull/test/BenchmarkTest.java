@@ -1,15 +1,15 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 import java.io.File;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.convexhull.Benchmark;
-import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
-import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
-import de.kellertobias.hs.algolab.dataset.CircleDataset;
-import de.kellertobias.hs.algolab.dataset.Dataset;
+import de.hska.iwi.algolab.convexhull.Benchmark;
+import de.hska.iwi.algolab.convexhull.algorithm.Algorithm;
+import de.hska.iwi.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
+import de.hska.iwi.algolab.dataset.CircleDataset;
+import de.hska.iwi.algolab.dataset.Dataset;
 
 public class BenchmarkTest {
 

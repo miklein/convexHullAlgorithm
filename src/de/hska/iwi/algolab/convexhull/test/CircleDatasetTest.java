@@ -1,11 +1,11 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.dataset.CircleDataset;
+import de.hska.iwi.algolab.dataset.CircleDataset;
 
 public class CircleDatasetTest {
 

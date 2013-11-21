@@ -1,10 +1,10 @@
-package de.kellertobias.hs.algolab.dataset;
+package de.hska.iwi.algolab.dataset;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import de.kellertobias.hs.algolab.convexhull.Point;
+import de.hska.iwi.algolab.convexhull.Point;
 
 /**
  * Dataset in which all points are inside of a rectangle but NOT on its edges

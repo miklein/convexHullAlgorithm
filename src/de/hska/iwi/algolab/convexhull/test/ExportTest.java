@@ -1,4 +1,4 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 import java.io.File;
 import java.util.List;
@@ -7,12 +7,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.convexhull.Export;
-import de.kellertobias.hs.algolab.convexhull.Point;
-import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
-import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
-import de.kellertobias.hs.algolab.dataset.Dataset;
-import de.kellertobias.hs.algolab.dataset.RandomDataset;
+import de.hska.iwi.algolab.convexhull.Export;
+import de.hska.iwi.algolab.convexhull.Point;
+import de.hska.iwi.algolab.convexhull.algorithm.Algorithm;
+import de.hska.iwi.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
+import de.hska.iwi.algolab.dataset.Dataset;
+import de.hska.iwi.algolab.dataset.RandomDataset;
 
 public class ExportTest {
 

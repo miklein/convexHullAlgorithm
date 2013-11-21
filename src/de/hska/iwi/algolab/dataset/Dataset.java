@@ -1,7 +1,8 @@
-package de.kellertobias.hs.algolab.dataset;
+package de.hska.iwi.algolab.dataset;
 
 import java.util.List;
-import de.kellertobias.hs.algolab.convexhull.Point;
+
+import de.hska.iwi.algolab.convexhull.Point;
 
 /**
  * Interface for Datasets

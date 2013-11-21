@@ -1,4 +1,4 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.convexhull.Point;
-import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
+import de.hska.iwi.algolab.convexhull.Point;
+import de.hska.iwi.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
 
 public class MonotoneChainAlgorithmTest {
 

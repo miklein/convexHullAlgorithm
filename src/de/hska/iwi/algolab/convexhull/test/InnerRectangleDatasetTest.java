@@ -1,9 +1,9 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.dataset.InnerRectangleDataset;
+import de.hska.iwi.algolab.dataset.InnerRectangleDataset;
 
 public class InnerRectangleDatasetTest {
 

@@ -1,11 +1,11 @@
-package de.kellertobias.hs.algolab.convexhull.algorithm;
+package de.hska.iwi.algolab.convexhull.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
-import de.kellertobias.hs.algolab.convexhull.Point;
+import de.hska.iwi.algolab.convexhull.Point;
 
 /**
  * Monotone Chain Algorithm to calculate the convex hull from a point dataset 

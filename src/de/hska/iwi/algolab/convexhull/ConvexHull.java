@@ -1,15 +1,15 @@
-package de.kellertobias.hs.algolab.convexhull;
+package de.hska.iwi.algolab.convexhull;
 
 import java.util.List;
 
-import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
-import de.kellertobias.hs.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
-import de.kellertobias.hs.algolab.dataset.CircleDataset;
-import de.kellertobias.hs.algolab.dataset.Dataset;
-import de.kellertobias.hs.algolab.dataset.InnerRectangleDataset;
-import de.kellertobias.hs.algolab.dataset.RandomDataset;
-import de.kellertobias.hs.algolab.dataset.RectangleDataset;
-import de.kellertobias.hs.algolab.dataset.TestDataset;
+import de.hska.iwi.algolab.convexhull.algorithm.Algorithm;
+import de.hska.iwi.algolab.convexhull.algorithm.MonotoneChainAlgorithm;
+import de.hska.iwi.algolab.dataset.CircleDataset;
+import de.hska.iwi.algolab.dataset.Dataset;
+import de.hska.iwi.algolab.dataset.InnerRectangleDataset;
+import de.hska.iwi.algolab.dataset.RandomDataset;
+import de.hska.iwi.algolab.dataset.RectangleDataset;
+import de.hska.iwi.algolab.dataset.TestDataset;
 
 /**
  * Convex hull calculation with different algorithms

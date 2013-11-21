@@ -1,4 +1,4 @@
-package de.kellertobias.hs.algolab.convexhull;
+package de.hska.iwi.algolab.convexhull;
 
 /**
  * Timer

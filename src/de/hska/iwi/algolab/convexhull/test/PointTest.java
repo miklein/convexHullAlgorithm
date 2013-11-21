@@ -1,11 +1,11 @@
-package de.kellertobias.hs.algolab.convexhull.test;
+package de.hska.iwi.algolab.convexhull.test;
 
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.kellertobias.hs.algolab.convexhull.Point;
+import de.hska.iwi.algolab.convexhull.Point;
 
 public class PointTest {
 
