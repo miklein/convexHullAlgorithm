@@ -34,7 +34,7 @@ public class Benchmark {
 		for (int i=0; i < loops; i++) {
 			dataset.regeneratePoints(n);
 			timer.start();
-			algo.calculate(dataset.getPoints());
+			algo.calculate(dataset);
 			timer.stop();
 			output.addBenchmark(n, timer.getRuntime());
 			

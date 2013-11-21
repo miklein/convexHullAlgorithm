@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
+import de.kellertobias.hs.algolab.dataset.Dataset;
 
 /**
  * Implementation of Chans algorithm
@@ -14,7 +15,9 @@ import de.kellertobias.hs.algolab.convexhull.Point;
 public class ChanAlgorithm implements Algorithm {
 
 	@Override
-	public List<Point> calculate(List<Point> dataset) {
+	public List<Point> calculate(Dataset object) {
+		
+		List<Point> dataset = object.getPoints();
 		
 		Collections.sort(dataset);
 		Point farthesLeftPoint = dataset.get(0);

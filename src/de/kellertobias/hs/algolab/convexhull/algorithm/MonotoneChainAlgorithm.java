@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ListIterator;
 
 import de.kellertobias.hs.algolab.convexhull.Point;
+import de.kellertobias.hs.algolab.convexhull.Timer;
+import de.kellertobias.hs.algolab.dataset.Dataset;
 
 /**
  * Implementation of the "Monotone Cain Algorithm" 
@@ -16,17 +18,20 @@ import de.kellertobias.hs.algolab.convexhull.Point;
 public class MonotoneChainAlgorithm implements Algorithm {
 
 	@Override
-	public List<Point> calculate(List<Point> dataset) {
+	public List<Point> calculate(Dataset dataset) {
 		
-		ListIterator<Point> datasetIterator = dataset.listIterator();
+		List<Point> datasetList = dataset.getPoints(); 
+		
+		
+		ListIterator<Point> datasetIterator = datasetList.listIterator();
 		List<Point> upperHull = new ArrayList<Point>();
 		List<Point> lowerHull = new ArrayList<Point>();
 		
 		// sort the points
-		Collections.sort(dataset);
+		Collections.sort(datasetList);
 		
 		// no need to calculate something
-		if (dataset.size() <= 2) return dataset;
+		if (datasetList.size() <= 2) return datasetList;
 		
 		
 		// calculate upper hull

@@ -1,5 +1,7 @@
 package de.kellertobias.hs.algolab.convexhull;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import de.kellertobias.hs.algolab.convexhull.algorithm.Algorithm;
@@ -25,23 +27,29 @@ public class ConvexHull {
 		//Benchmark benchmark = new Benchmark();
 		Algorithm algo = new MonotoneChainAlgorithm();
 		
-		Dataset dataset = new RandomDataset(500);
-		List<Point> result = algo.calculate(dataset.getPoints());
+		//Dataset dataset = new CircleDataset(20);
+		//List<Point> result = algo.calculate(dataset);
 		
 		
+		
+		
+		
+		
+		
+//		Export plot = new Export("D:\\pplot.dat");
+//		plot.addDataset(dataset);
+//		plot.addHull(result);
+//		plot.store();
+//		
+//		System.out.println(result);
 			
-		Export plot = new Export("D:\\pplot.dat");
-		plot.addDataset(dataset);
-		plot.addHull(result);
-		plot.store();
-			
 		
-//		int rounds = 14;
-//		Benchmark benchmark = new Benchmark();
-//		benchmark.runtimeBenchmark(algo, new CircleDataset(1), rounds, 500);
-//		benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1), rounds, 500);
-//		benchmark.runtimeBenchmark(algo, new RectangleDataset(1), rounds, 500);
-//		benchmark.runtimeBenchmark(algo, new RandomDataset(1), rounds, 500);
+		int rounds = 14;
+		Benchmark benchmark = new Benchmark();
+		benchmark.runtimeBenchmark(algo, new CircleDataset(1), rounds, 500);
+		benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1), rounds, 500);
+		benchmark.runtimeBenchmark(algo, new RectangleDataset(1), rounds, 500);
+		benchmark.runtimeBenchmark(algo, new RandomDataset(1), rounds, 500);
 		
 		 
 //		Dataset dataset = new CircleDataset(50);
