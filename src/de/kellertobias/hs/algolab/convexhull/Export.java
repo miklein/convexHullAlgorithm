@@ -63,7 +63,9 @@ public class Export {
 	 * @param runtime the runtime of the algorithm
 	 */
 	public void addBenchmark(int amount, long runtime) {
-		this.output+= amount+","+runtime+";\n";
+		double tmp = (double)(runtime * 0.000001);
+		tmp = Math.round(tmp * Math.pow(10, 3)) / Math.pow(10, 3);
+		this.output+= amount+","+runtime+","+tmp+";\n";
 	}
 	
 	

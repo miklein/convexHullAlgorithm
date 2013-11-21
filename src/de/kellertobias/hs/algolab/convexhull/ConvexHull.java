@@ -25,7 +25,7 @@ public class ConvexHull {
 		//Benchmark benchmark = new Benchmark();
 		Algorithm algo = new MonotoneChainAlgorithm();
 		
-		Dataset dataset = new InnerRectangleDataset(400);
+		Dataset dataset = new RandomDataset(500);
 		List<Point> result = algo.calculate(dataset.getPoints());
 		
 		
@@ -35,14 +35,14 @@ public class ConvexHull {
 		plot.addHull(result);
 		plot.store();
 			
-//		
-//		int rounds = 16;
+		
+//		int rounds = 14;
 //		Benchmark benchmark = new Benchmark();
 //		benchmark.runtimeBenchmark(algo, new CircleDataset(1), rounds, 500);
 //		benchmark.runtimeBenchmark(algo, new InnerRectangleDataset(1), rounds, 500);
 //		benchmark.runtimeBenchmark(algo, new RectangleDataset(1), rounds, 500);
 //		benchmark.runtimeBenchmark(algo, new RandomDataset(1), rounds, 500);
-//		
+		
 		 
 //		Dataset dataset = new CircleDataset(50);
 //		ChanAlgorithm algo = new ChanAlgorithm();
