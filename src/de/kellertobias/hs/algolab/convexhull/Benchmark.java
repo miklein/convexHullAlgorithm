@@ -34,10 +34,11 @@ public class Benchmark {
 			timer.start();
 			algorithm.calculate(dataset.getPoints());
 			timer.stop();
-			output.addBenchmark(n, timer.getRuntime());
+			
 			
 			double tmp = (double)(timer.getRuntime() * 0.000001);
 			tmp = Math.round(tmp * Math.pow(10, 3)) / Math.pow(10, 3);
+			output.addBenchmark(n, (double) tmp);
 			System.out.println("n=: "+n+" time="+((double)tmp)+"ms");
 			n*= 2;
 		}

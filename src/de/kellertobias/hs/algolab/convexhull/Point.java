@@ -70,10 +70,10 @@ public class Point implements Comparable<Point> {
 		double v2y = this.getY() - start.getY();
 		
 		// crossproduct
-		double cp = (v1x * v2y) - (v1y * v2x);
-		if (cp > 0) return 1;		// point is left (above) the line
-		if (cp < 0) return -1;		// point is right (below) the line
-		return 0;					// point is on the line		
+		double crossProduct = (v1x * v2y) - (v1y * v2x);
+		if (crossProduct > 0) return 1;			// point is left (above) the line
+		if (crossProduct < 0) return -1;		// point is right (below) the line
+		return 0;								// point is on the line		
 	}
 	
 	

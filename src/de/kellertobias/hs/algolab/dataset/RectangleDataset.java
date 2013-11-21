@@ -33,9 +33,7 @@ public class RectangleDataset implements Dataset {
 		this.points.clear();
 		Point topLeft = new Point(0,(int)Math.sqrt(amount)*2);
 		Point bottomRight = new Point((int)Math.sqrt(amount)*2,0);
-		
-		Random random = new Random(System.nanoTime());
-		
+				
 		for (int i=0; i < amount; i++) {
 			int x = (int)(Math.random() * ((bottomRight.getX()+1 - topLeft.getX())) + topLeft.getX());
 			int y = (int) (Math.random() * ((topLeft.getY()+1 - bottomRight.getY())) + bottomRight.getY());

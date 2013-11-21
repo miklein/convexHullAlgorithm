@@ -58,10 +58,10 @@ public class Export {
 	 * add the benchmark-results to the file
 	 * 
 	 * @param amount the amount of points
-	 * @param runtime the runtime of the algorithm
+	 * @param tmp the runtime of the algorithm
 	 */
-	public void addBenchmark(int amount, long runtime) {
-		this.output+= amount+","+runtime+";\n";
+	public void addBenchmark(int amount, double tmp) {
+		this.output+= amount+","+tmp+";\n";
 	}
 	
 	
